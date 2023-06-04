@@ -17,7 +17,7 @@ app.use(session({
     }
 ))
 
-
+app.use('/', homeRouter)
 app.use('/home', homeRouter)
 app.use('/cart', cartRouter)
 
