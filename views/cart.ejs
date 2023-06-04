@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/style.css">
+    <link rel="stylesheet" href="/styles/style_cart.css">
+    <title>Cart</title>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="/home/getCategories">
+                <img class="logo-image" src="/images/logo.png" alt="">
+            </a>
+        </div>
+        <div class="header-bar">
+            <div class="category-text">
+                ALL CATEGORIES
+            </div>
+            <div class="icon-section">
+                <a class="icon" href="">
+                    <img class="cart-icon" src="/images/icons8-shopping-cart-96.png" alt="shopping-cart">
+                    <div class="hide" id="cart-count">0</div>
+                </a>
+                <a class="icon" href="">
+                    <img class="search-icon-class" src="/images/icons8-search-100.png" alt="search-icon">
+                </a>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="cart">
+            <div class="cart-text">CART</div>
+            <div class="cart-container" id="cart-container">
+                <div class="cart-header">
+                    <div>PRODUCT</div>
+                    <div>QUANTITY</div>
+                </div>
+                <%for(let i = 0; i < products.length; i++){%>
+                    <%if(products[i].quantity >= 1){%>
+                        <div class="cart-product">
+                            <div class="cart-product-name"><%=products[i].name%></div>
+                            <div class="cart-product-menu">
+                                <form class="button increment circle" action="/cart/remove/<%= products[i].id %>" method="post">
+                                    <input type="hidden" name="productId" value="<%= products[i].id %>">
+                                    <button class="button decrement circle">-</button>
+                                </form>
+                                <div class="divider"></div>
+                                <input class="input-bar" value="<%=products[i].quantity%>">
+                                <div class="divider"></div>
+                                <form class="button increment circle" action="/cart/increment/<%= products[i].id %>" method="post">
+                                    <input type="hidden" name="productId" value="<%= products[i].id %>">
+                                    <button class="button increment circle">+</button>
+                                </form>
+                            </div>
+                        </div>
+                    <%}%>
+                <%}%>
+            </div>
+            <div class="clear-container">
+                <form class="button clear-all" action="/cart/clear" method="post">
+                    <button class="button clear-all">CLEAR CART</button>
+                </form>
+            </div>
+        </div>
+    </main>
+    
+</body>
+</html>

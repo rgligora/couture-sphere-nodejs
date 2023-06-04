@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/style.css">
+    <script src="/scripts/responsive_menu.js" defer></script>
+    <title>Couture Sphere</title>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <a class="logo-image" href="/home/getCategories">
+                <img class="logo-image" src="/images/logo.png" alt="">
+            </a>
+            <a class="drop-down-menu" href="#" id="drop-down-button">
+                <img src="/images/icons8-menu-90.png" alt="menu=icon">
+            </a>
+        </div>
+        <div class="drop-down-menu-reveal" id="left-menu">
+            <div class="category-section">
+                <ul class="group-category" id="category-menu">
+                    <li><a href="/home/getCategories" data-category="all">ALL</a>
+                    </li>
+                    <li><a href="/home/getCategories" data-category="exception">CLOTHES</a>
+                        <ul class="subcategory">
+                            <li><a href="/home/getProducts/T-shirt" data-category="T-shirt">T-shirt</a></li>
+                            <li><a href="/home/getProducts/Hoodie" data-category="Hoodie">Hoodie</a></li>
+                            <li><a href="/home/getProducts/Jacket" data-category="Jacket">Jacket</a></li>
+                            <li><a href="/home/getProducts/Pants" data-category="Pants">Pants</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="/home/getCategories" data-category="exception">FOOTWEAR</a>
+                        <ul class="subcategory" >
+                            <li><a href="/home/getProducts/Dress-shoes" data-category="Dress-shoes">Dress shoes</a></li>
+                            <li><a href="/home/getProducts/Sneakers" data-category="Sneakers">Sneakers</a></li>
+                            
+                        </ul>
+                    </li>
+
+                    <li><a href="/home/getCategories" data-category="exception">ACCESSORIES</a>
+                        <ul class="subcategory" >
+                            <li><a href="/home/getProducts/Bags" data-category="Bags">Bags</a></li>
+                            <li><a href="/home/getProducts/Sunglasses" data-category="Sunglasses">Sunglasses</a></li>
+                            <li><a href="/home/getProducts/Watches" data-category="Watches">Watches</a></li>
+                            <li><a href="/home/getProducts/Hats" data-category="Hats">Hats</a></li>
+                            <li><a href="/home/getProducts/Scarfs" data-category="Scarfs">Scarfs</a></li>
+                        </ul>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+        <div class="header-bar">
+            <div class="category-text">
+                <%=current_category%>
+            </div>
+            <div class="icon-section">
+                <a class="icon" href="/cart/getAll">
+                    <img class="cart-icon" src="/images/icons8-shopping-cart-96.png" alt="shopping-cart">
+                    <%if (cart_count >= 1){%>
+                        <div class="" id="cart-count"><%=cart_count%></div>
+                    <%}else{%>
+                        <div class="hide" id="cart-count"><%=cart_count%></div>
+                    <%}%>
+                </a>
+                <a class="icon" href="">
+                    <img class="search-icon-class" src="/images/icons8-search-100.png" alt="search-icon">
+                </a>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="left-menu-bar">
+            <div class="category-section">
+                <ul class="group-category" id="category-menu">
+                    <li><a href="/home/getCategories" data-category="all">ALL</a>
+                    </li>
+                    <li><a href="/home/getCategories" data-category="exception">CLOTHES</a>
+                        <ul class="subcategory">
+                            <li><a href="/home/getProducts/T-shirt" data-category="T-shirt">T-shirt</a></li>
+                            <li><a href="/home/getProducts/Hoodie" data-category="Hoodie">Hoodie</a></li>
+                            <li><a href="/home/getProducts/Jacket" data-category="Jacket">Jacket</a></li>
+                            <li><a href="/home/getProducts/Pants" data-category="Pants">Pants</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="/home/getCategories" data-category="exception">FOOTWEAR</a>
+                        <ul class="subcategory" >
+                            <li><a href="/home/getProducts/Dress-shoes" data-category="Dress-shoes">Dress shoes</a></li>
+                            <li><a href="/home/getProducts/Sneakers" data-category="Sneakers">Sneakers</a></li>
+                            
+                        </ul>
+                    </li>
+
+                    <li><a href="/home/getCategories" data-category="exception">ACCESSORIES</a>
+                        <ul class="subcategory" >
+                            <li><a href="/home/getProducts/Bags" data-category="Bags">Bags</a></li>
+                            <li><a href="/home/getProducts/Sunglasses" data-category="Sunglasses">Sunglasses</a></li>
+                            <li><a href="/home/getProducts/Watches" data-category="Watches">Watches</a></li>
+                            <li><a href="/home/getProducts/Hats" data-category="Hats">Hats</a></li>
+                            <li><a href="/home/getProducts/Scarfs" data-category="Scarfs">Scarfs</a></li>
+                        </ul>
+                    </li>
+
+                </ul>
+            </div>
+            <div class="about-section">
+                <div class="about-container">
+                    <img src="/images/icons8-customer-support-100.png" alt="">
+                    <a href="#">CONTACT</a>
+                </div>
+                <div class="about-container">
+                    <img src="/images/icons8-email-open-96.png" alt="">
+                    <a href="#">NEWSLETTER</a></div>
+                <div class="about-container">
+                    <img src="/images/icons8-subscription-96.png" alt="">
+                    <a href="#">SUBSCRIBE ME</a></div>
+            </div>
+
+        </div>
+        <div class="presenting-section">
+            <div class="presenting-container">
+                <img class="presenting-image" src="/images/presents-left.jpg" alt="">
+                <img class="presenting-image" src="/images/presents-right.jpg" alt="">
+            </div>
+            <div class="splash">Couture Sphere</div>
+            
+        </div>
+        <div class="product-container" id="import-products">
+            <% for (let i = 0; i < products.length; i++) { %>
+                <div class="product">
+                  <img src="<%= products[i].image %>" alt="<%= products[i].name %> Image">
+                  <h3><%= products[i].name %></h3>
+                  <p>$<%= products[i].price %></p>
+                  <% if (products[i].quantity >= 1) { %>
+                    <div class="product-count" id="product-counter<%=products[i].id%>"><%=products[i].quantity%></div>
+                  <% } else { %>
+                    <div class="product-count hide" id="product-counter<%=products[i].id%>"><%=products[i].quantity%></div>
+                  <% } %>
+                  <form class="add-to-cart-button" action="/cart/add/<%= products[i].id %>" method="post">
+                    <input type="hidden" name="category" value="<%=products[i].category%>">
+                    <button type="submit" class="add-to-cart-button" alt="<%=products[i].name%>">
+                        <img class="hidden-icon" src="/images/icons8-shopping-cart-96.png" alt="shopping-cart-button">
+                    </button>
+                  </form>
+                </div>
+              <% } %>
+        </div>
+    </main>
+    
+</body>
+</html>
