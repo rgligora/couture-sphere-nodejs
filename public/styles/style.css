@@ -29,8 +29,8 @@ header{
     justify-content: stretch;
 }
 .logo-image{
-    max-width: 200px;
-    max-height: 200px;
+    width: 200px;
+    height: 200px;
 }
 
 
@@ -76,14 +76,37 @@ header{
     border-radius: 50%;
 }
 
+@keyframes blinking {
+    0% {
+    
+    }
+    50% {
+        font-size: 5rem;
+        background-color: rgba(238,238,238,255);
+        border: 0.8rem solid rgba(0,173,181,255);
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+        padding: 11px 62px;
+    }
+    100% {
+        font-size: 2rem;
+        background-color: rgba(238,238,238,255);
+        padding: 3px 19px;
+    }
+  }
+  
+  #cart-count {
+    animation: blinking 0.4s 1;
+  }
+  
+
 .header-bar>div{
     height: 100%;
     flex-grow: 1;
     border: 0.3rem solid black;
 }
 .logo>img{
-    max-width: 200px;
-    max-height: 200px;
+    width: 200px;
+    height: 200px;
 }
 .drop-down-menu{
     display: none;

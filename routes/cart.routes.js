@@ -9,6 +9,7 @@ router.use(express.urlencoded({ extended: false }))
 
 router.post('/add/:id', (req,res)=>{
     const category = req.session.category
+    const scrollPosition = req.session.scrollPosition || 0;
     const {id} = req.params
     req.session.cart_counter++;
     req.session.products = req.session.products.map((product)=>{
@@ -69,9 +70,18 @@ router.post('/clear', (req,res)=>{
     res.status(200).redirect('/cart/getAll')
 })
 
+router.get('/add/:id', (req,res)=>{
+    res.status(404).send(`<h1>There is no GET request for cart${req.url}  There is only POST!</h1><a href="/home">Go back to home</a>`)
+})
+
 router.all('*', (req,res)=>{
     res.status(404).send('Error 404: Not found')
 })
+
+router.post('/save-scroll', (req, res) => {
+    req.session.scrollPosition = req.body.scrollPosition || 0;
+    res.sendStatus(200);
+});
 
 
 module.exports = router
